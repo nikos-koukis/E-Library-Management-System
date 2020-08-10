@@ -23,6 +23,8 @@
 
 	Project is available only for Admin Panel
 	
+	User Panel is in progress..
+	
 	Project is in progress...
 	
 	Available Only for Desktop (max-width: 1920px)
