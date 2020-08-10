@@ -4,14 +4,14 @@
 
 	How to run this Project
 	
-1. Download and Unzip file on your local system copy eLibrary.
+1. Download and Unzip file on your local system copy E-Library-Management-System-master.
 2. Put library folder inside root directory
 	
 	DataBase Configuration
 
 1. Open phpmyadmin
 2. Create Database library_system
-3. Import database library_system.sql (Available inside zip package in Folder => eLibrary/sql)
+3. Import database library_system.sql (Available inside zip package in Folder => E-Library-Management-System-master/sql)
 
 	How start the Project
 	
