@@ -13,7 +13,7 @@
 2. Create Database library_system
 3. Import database library_system.sql (Available inside zip package in Folder => eLibrary/sql)
 
-	How start thr Project
+	How start the Project
 	
 1. Open Your browser put inside browser “http://localhost/eLibrary/index.php” (Don't forget to enter port number)
 2. Login Details for Admin: Username: admin
