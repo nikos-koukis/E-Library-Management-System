@@ -1,0 +1,59 @@
+
+@media screen and (max-width: 1920px){ 
+    #edit_author_header{
+        margin-top: 3%;
+        margin-left: 100px;
+        border-bottom: 2px solid rgb(132, 165, 255);
+    }
+
+    .container_form{
+        border: 1px solid rgb(132, 165, 255);
+        border-radius: 5px;
+        max-width: 600px;
+        margin: auto;
+        padding: 10px;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 50px;
+        margin-top: 45px;
+    }
+
+    #form_header{
+        color: rgb(68, 118, 255);
+        text-align: center;
+        border-bottom: 2px solid rgb(132, 165, 255);
+
+    }
+
+    label[for="author_name"]{
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    input[type=text]{
+        margin-bottom: 5px;
+        width: 100%;
+        padding: 15px;
+        border-radius:5px;
+        border: 1px solid gray;
+        font-size:15px;
+    }
+    
+    button{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: 100%;
+        padding: 15px;
+        border-radius: 5px;
+        font-size: 20px;
+    }
+
+    .error{
+        color:red;
+        padding-left: 20px;
+        margin-top: -10px;
+    
+    }
+
+
+}

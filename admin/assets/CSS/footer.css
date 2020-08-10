@@ -1,0 +1,19 @@
+@media screen and (max-width: 1950px){   /* -------------css for pc--------------*/
+
+    .footer{
+        color:white;
+        text-align: center;
+        width: 100%;
+        background-color: rgb(93, 158, 255);
+        position: fixed;
+        bottom: 0;
+        padding-top: 4px;
+    }
+
+
+    .footer h5{
+        font-size: 15px;
+    }
+
+
+}   

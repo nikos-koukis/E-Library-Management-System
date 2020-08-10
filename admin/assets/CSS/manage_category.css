@@ -1,0 +1,15 @@
+@media screen and (max-width: 1950px){
+
+    .header-line {
+        padding-top: 60px;
+    }
+
+    tbody {
+        text-align: center;
+    }
+
+    thead {
+        text-align: center;
+    }
+
+}

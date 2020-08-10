@@ -1,0 +1,84 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+}
+
+html,body{
+    font-family: 'Times New Roman', Times, serif;  
+    height: 100%;
+    padding: 0;
+    margin: 0;
+
+}
+
+/* ---------------------------------------- HEADER STYLE --------------------------------------------------- */
+@media screen and (max-width: 1950px){   /* -------------css for pc--------------*/
+    header h3{
+        background-color: white;
+        color:black;
+        text-align: center;
+        height: 50px;
+        padding-top: 28px;
+    }
+
+    img{
+        width: 12%;
+        margin-top:-70px;
+        margin-left: 40px;;
+            
+    }
+
+    nav{
+        background-color: rgb(148, 191, 255);
+        border-bottom: 5px solid #5350ff;
+    }
+
+    #menu-top a{
+        color:black;
+    }
+
+    .nav li a {
+        position: relative;
+        display: block;
+        padding-bottom: 15px;
+        padding-top: 15px;
+
+    }
+
+    .nav li a:hover {
+        background-color: rgb(121, 123, 255);
+        border-radius: 5px;
+    } 
+
+    .nav-item .dropdown-menu{
+        background-color:rgb(148, 191, 255);
+        opacity: .9;
+    }
+
+    #btn_logout{
+        margin-left: 15%;
+        margin-right: -15%;
+        padding-top: 15px;
+    }
+
+}
+
+@media screen and (max-width: 600px){ 
+    header h3{
+        background-color: white;
+        color:black;
+        text-align: center;
+        height: 70px;
+        padding-top: 58px;
+        font-size: 20px;
+    }
+
+    img{
+        width: 22%;
+        margin-top:-140px;
+        margin-left: 10px;;
+            
+    }
+}
