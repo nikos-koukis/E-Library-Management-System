@@ -1,9 +1,5 @@
 <?php include 'server.php';
 include 'includes/config.php';
-if(!isset($_SESSION)) 
-{ 
-    session_start(); 
-} 
 ?>
 
 <!DOCTYPE html>

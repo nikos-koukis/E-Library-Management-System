@@ -23,6 +23,7 @@ function show_password() {
           required: true
         },
         phone: {
+          required: true,
           maxlength: 10
         },
         password: {
@@ -35,22 +36,38 @@ function show_password() {
       },
       messages: {
         username: {
-          required: "Please enter your username"
+          required: "**Please enter your username"
         },
         email: {
-          required: "Please enter your email"
+          required: "**Please enter your email"
         },
         phone: {
-          maxlength: "Please enter no more than 10 digits"
+          required: "**Please enter your phone",
+          maxlength: "**Please enter no more than 10 digits"
         },
         password: {
-          required: "Please enter your password"
+          required: "**Please enter your password"
         },
         confirm_password: {
-          required: "Please confrim your password",
-          equalTo: "Passwords do not match!"
+          required: "**Please confrim your password",
+          equalTo: "**Passwords do not match!"
         }
       }
     });
   });
 
+
+  function signup_form_validation(){
+
+    var phone = $("#phone").val();
+
+    var pattern = /^[0-9]*$/;
+
+    if(!pattern.test(phone)){
+      $(".phone_error").show();
+      $(".phone_error").text("**Please enter a valid Phone");
+      return false;
+    }
+    return true;
+    
+  }

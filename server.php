@@ -14,7 +14,7 @@ if (isset($_POST['admin_login'])) {
     $query = "SELECT * FROM admin_credits WHERE username = '$username' AND password = '$password'";
     $result = mysqli_query($db,$query);
     if (mysqli_num_rows($result) == 1){
-        $_SESSION['username'] = $username;
+        
         header ('location: admin/index.php');
     }
 }

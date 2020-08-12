@@ -25,7 +25,7 @@
     </div>
 
     <div class="container_form">
-        <form method="post" name="signup_form">
+        <form method="post" name="signup_form" onsubmit="return signup_form_validation()">
 
         <div class="col-12" id="signup_form_header">
             <h3>Login Form</h3>
@@ -43,7 +43,7 @@
 
         <div class="form-group">
             <label for="phone">Enter Phone</label>
-            <input type="text" class="form-control" id="phone" name="phone" >
+            <input type="text" class="form-control" id="phone" name="phone" required>
             <div class="phone_error"></div>
         </div>
             
@@ -63,7 +63,8 @@
             
         </div>
 
-        <button type="submit" class="btn btn-primary" name="signup">Register</button>
+        <button type="submit" class="btn btn-primary" name="">Register</button>
+        <div class="success_signup">You have Successfully Register! <a href="login.php">Login Now</a></div>
 
         </form>
     </div>

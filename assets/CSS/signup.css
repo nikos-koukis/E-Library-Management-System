@@ -51,10 +51,24 @@
     }
 
     .error{
+        font-size: 15px;
         color:red;
         padding-left: 20px;
         margin-top: -10px;
     
+    }
+
+    .phone_error{
+        font-size: 15px;
+        color:red;
+        padding-left: 20px;
+    } 
+
+    .success_signup{
+        background-color: rgb(152, 255, 152);
+        color:green;
+        text-align: center;
+        border-radius: 5px;
     }
 
 }

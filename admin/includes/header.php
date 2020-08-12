@@ -48,7 +48,7 @@ include '../includes/config.php';
                             <a class="nav-link" href="change_password.php?admin_id=<?php echo $row['id'];?>">CHANGE PASSWORD</a>
                         </li>
                                 <?php }} ?>
-                        <a href="logout.php" class="btn btn-danger btn-sm" id="btn_logout"><i class="fa fa-sign-out"></i> Log Out</a>
+                            <a href="../index.php" class="btn btn-danger btn-sm" id="btn_logout"><i class="fa fa-sign-out"></i> Log Out</a>
                     </ul>
                 </div>
             </div>
