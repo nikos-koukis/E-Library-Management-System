@@ -13,31 +13,31 @@ include '../includes/config.php';
                     <ul class="nav navbar-nav ml-auto w-100 justify-content-end" id="menu-top">
                         <li class="nav-item">
                             <a class="nav-link" href="index.php">DASHBOARD</a>
-                        </li>
+                        </li><span>|</span>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" >CATEGORIES</a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="add_category.php">ADD CATEGORY</a>
                                 <a class="dropdown-item" href="manage_category.php">MANAGE CATEGORY</a>
                             </div>
-                        </li>
+                        </li><span>|</span>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" >AUTHORS</a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="add_author.php">ADD AUTHOR</a>
                                 <a class="dropdown-item" href="manage_authors.php">MANAGE AUTHORS</a>
                             </div>
-                        </li>
+                        </li><span>|</span>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" >BOOKS</a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="add_book.php">ADD BOOK</a>
                                 <a class="dropdown-item" href="manage_books.php">MANAGE BOOKS</a>
                             </div>
-                        </li>
+                        </li><span>|</span>
                         <li class="nav-item">
                             <a class="nav-link" href="students.php">STUDENTS</a>
-                        </li>
+                        </li><span>|</span>
                         <li class="nav-item">
                             <?php
                             $query = "SELECT * FROM admin_credits";
@@ -45,10 +45,10 @@ include '../includes/config.php';
                             if($result){
                                 foreach ($result as $row){
                             ?>
-                            <a class="nav-link" href="change_password.php?admin_id=<?php echo $row['id'];?>">CHANGE PASSWORD</a>
-                        </li>
+                            <a class="nav-link" href="change_password.php">CHANGE PASSWORD</a>
+                        </li><span>|</span>
                                 <?php }} ?>
-                            <a href="../index.php" class="btn btn-danger btn-sm" id="btn_logout"><i class="fa fa-sign-out"></i> Log Out</a>
+                        <a href="admin_logout.php" class="btn btn-danger btn-sm" id="btn_logout"><i class="fa fa-sign-out"></i> Log Out</a>
                     </ul>
                 </div>
             </div>

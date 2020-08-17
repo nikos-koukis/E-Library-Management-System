@@ -15,16 +15,36 @@
 
 	How start the Project
 	
-1. Open Your browser put inside browser “ http://localhost/eLibrary/index.php ” (Don't forget to enter port number)
+1. Open Your browser put inside browser “ http://localhost/eLibrary/index.php ” (Don't forget to enter port number if you haven't default port number :80)
 2. Login Details for Admin: Username: admin
 							Password: admin
-						
+			
+3. Login Details for User: Username: nikos
+						   Password: test
+
+4. For more users check the students at admin panel => For all users Paasword: test
+
 #-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
 
-	Project is available only for Admin Panel
-	
-	User Panel is in progress..
-	
+	Admin Features
+
+1. Admin Dashboard
+2. Admin can add/update/delete category.
+3. Admin can add/update/delete author.
+4. Admin can add/update/delete book.
+5. Admin can also manage student.
+6. Admin can active/inactive student.
+7. Admin can change own password.
+
+	User Features
+
+1. User can create new account.
+2. User Dashboard (after register & login).
+3. User Profile.
+4. User can change own password.
+
+#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
+		
 	Project is in progress...
 	
 	Available Only for Desktop (max-width: 1920px)

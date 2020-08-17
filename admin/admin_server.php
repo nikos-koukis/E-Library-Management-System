@@ -2,6 +2,7 @@
 
 include "../includes/config.php";
 
+
 // ---------------  code for inactive student in student table from admin ------------------
 if(isset($_GET['inact_id']))
 {
@@ -248,25 +249,25 @@ if(isset($_POST['edit_book'])){
 
 //------------------- change admin password ---------------
 
-if(isset($_POST['change_admin_pass']))
-{
-    $current_password=sha1($_POST['current_password']);
-    $new_password=sha1($_POST['new_password']);
+// if(isset($_POST['change_admin_pass']))
+// {
+//     $current_password=sha1($_POST['current_password']);
+//     $new_password=sha1($_POST['new_password']);
 
 
-    $id=$_GET['admin_id'];
+//     $id=$_GET['admin_id'];
 
-    $query=mysqli_query($db,"SELECT password FROM admin_credits where password='$current_password' && id='$id'");
-    $num=mysqli_fetch_array($query);
+//     $query=mysqli_query($db,"SELECT password FROM admin_credits where password='$current_password' && id='$id'");
+//     $num=mysqli_fetch_array($query);
 
-    if($num>0)  
-    {
-        $con=mysqli_query($db,"update admin_credits set password= '$new_password' where id='$id'");
+//     if($num>0)  
+//     {
+//         $con=mysqli_query($db,"update admin_credits set password= '$new_password' where id='$id'");
 
-    }
+//     }
 
 
-}
+// }
 
 
 

@@ -19,45 +19,47 @@ if(!isset($_SESSION))
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
     <link rel="stylesheet" href="assets/CSS/header.css">
-    <link rel="stylesheet" href="assets/CSS/index.css">
+    <link rel="stylesheet" href="assets/CSS/login.css">
     <link rel="stylesheet" href="assets/CSS/footer.css">
-    <script src="assets/JS/index.js"></script>
+    <script src="assets/JS/login.js"></script>
 </head>
 <body>
 
 <?php include 'includes/header.php'; ?>
 
-    <div class="col-10" id="admin-header">
-            <h3>Admin Login Form</h3>
+    <div class="col-10" id="user-header">
+            <h3>User Login Form</h3>
     </div>
 
     <div class="container_form">
-        <form method="post" name="admin_form" >
 
-        <div class="col-12" id="form_header">
-            <h3>Login Form</h3>
-        </div>
+        <form method="post" name="login_user_form">
 
-        <div class="form-group">
-            <label for="username">Admin Username<span class="text-danger"> *</span></label>
-            <input type="text" class="form-control" id="username" name="username" required>
-        </div>
-            
-        <div class="form-group">
-            <label for="password">Password<span class="text-danger"> *</span></label>
-            <input type="password" class="form-control" id="password" name="password" required>
-        </div>
+            <div class="col-12" id="form_header">
+                <h3>Login Form</h3>
+            </div>
 
-        <div class="form-check">
-            <input type="checkbox" class="form-check-input" onclick="show_password()">
-            <label class="form-check-label" for="show_password">Show Password</label>
-            
-        </div>
+            <div class="form-group">
+                <label for="username">Username<span class="text-danger"> *</span></label>
+                <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+                
+            <div class="form-group">
+                <label for="password">Password<span class="text-danger"> *</span></label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
 
-        <button type="submit" class="btn btn-primary" name="admin_login">Login</button>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" onclick="show_password()">
+                <label class="form-check-label" for="show_password">Show Password</label>
+                
+            </div>
+
+            <button type="submit" class="btn btn-primary" name="user_login">Login</button>
 
         </form>
     </div>
+
 
 </body>
 

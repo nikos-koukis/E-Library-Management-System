@@ -1,7 +1,5 @@
-/* ---------------------------------------- SIGNUP FORM --------------------------------------------------- */
-
 @media screen and (max-width: 1920px){ 
-    #user-header{
+    #student_change_pass{
         margin-top: 3%;
         margin-left: 100px;
         border-bottom: 2px solid rgb(132, 165, 255);
@@ -20,14 +18,14 @@
 
     }
 
-    #signup_form_header{
+    #change_pass_header{
         color: rgb(68, 118, 255);
         text-align: center;
         border-bottom: 2px solid rgb(132, 165, 255);
 
     }
 
-    input[type=text],[type=password],[type=email]{
+    input[type=password]{
         margin-bottom: 5px;
         width: 100%;
         padding: 15px;
@@ -36,7 +34,7 @@
         font-size:15px;
     }
 
-    label[for="username"]{
+    label[for="current_password"]{
         padding-top: 10px;
     }
 
@@ -51,18 +49,11 @@
     }
 
     .error{
-        font-size: 15px;
         color:red;
         padding-left: 20px;
         margin-top: -10px;
     
     }
-
-    .phone_error{
-        font-size: 15px;
-        color:red;
-        padding-left: 20px;
-    } 
 
 
 }

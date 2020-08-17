@@ -43,6 +43,7 @@ html,body{
         display: block;
         padding-bottom: 15px;
         padding-top: 15px;
+        letter-spacing: 2px;
 
     }
 
@@ -54,6 +55,13 @@ html,body{
     span{
         font-size: 25px;
         padding-top: 5px;
+    }
+
+    
+    #btn_logout{
+        margin-right: -10%;
+        padding-top: 15px;
+        margin-left: 10px;
     }
 
 }

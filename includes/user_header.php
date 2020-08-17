@@ -1,3 +1,5 @@
+<?php include 'server.php';
+?>
 <header>
     <h3>E Library Management System</h3>
     <img src="assets/img/logo.jpg" >
@@ -9,14 +11,12 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="nav navbar-nav ml-auto w-100 justify-content-end" id="menu-top">
                         <li class="nav-item">
-                            <a class="nav-link" href="index.php">ADMIN LOGIN</a>
+                            <a class="nav-link" href="user_dashboard.php">MY PROFILE <i class="fa fa-user" aria-hidden="true"></i></a>
                         </li><span>|</span>
                         <li class="nav-item">
-                            <a class="nav-link " href="login.php">USER LOGIN</a>
+                            <a class="nav-link" href="user_change_pass.php">CHANGE PASSWORD <i class="fa fa-lock"></i></a>
                         </li><span>|</span>
-                        <li class="nav-item">
-                            <a class="nav-link" href="signup.php">USER SIGNUP</a>
-                        </li>
+                        <a href="user_logout.php" class="btn btn-danger btn-sm" id="btn_logout" name="user_logout"><i class="fa fa-sign-out"></i> Log Out</a>
                     </ul>
                 </div>
             </div>

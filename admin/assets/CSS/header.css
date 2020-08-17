@@ -60,24 +60,12 @@ html,body{
     #btn_logout{
         margin-right: -10%;
         padding-top: 15px;
+        margin-left: 10px;
     }
 
-}
-
-@media screen and (max-width: 600px){ 
-    header h3{
-        background-color: white;
-        color:black;
-        text-align: center;
-        height: 70px;
-        padding-top: 58px;
-        font-size: 20px;
+    span{
+        font-size: 25px;
+        padding-top: 5px;
     }
 
-    img{
-        width: 22%;
-        margin-top:-140px;
-        margin-left: 10px;;
-            
-    }
 }

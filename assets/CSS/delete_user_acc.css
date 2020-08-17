@@ -1,0 +1,11 @@
+@media screen and (max-width: 1950px){   /* -------------css for pc--------------*/
+    
+    #contentbox{
+        position:absolute;
+        left:500px;
+        top:200px;
+        font-size:25px;
+        background-color: rgb(196, 220, 255);
+    }
+
+}

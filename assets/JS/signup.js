@@ -24,7 +24,8 @@ function show_password() {
         },
         phone: {
           required: true,
-          maxlength: 10
+          maxlength: 10,
+          minlength:10
         },
         password: {
           required: true
@@ -43,7 +44,8 @@ function show_password() {
         },
         phone: {
           required: "**Please enter your phone",
-          maxlength: "**Please enter no more than 10 digits"
+          maxlength: "**Please enter no more than 10 digits",
+          minlength: "**Please enter up to 10 digits"
         },
         password: {
           required: "**Please enter your password"
@@ -67,7 +69,8 @@ function show_password() {
       $(".phone_error").show();
       $(".phone_error").text("**Please enter a valid Phone");
       return false;
-    }
+    }  
+
     return true;
-    
   }
+

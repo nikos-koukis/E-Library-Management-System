@@ -1,4 +1,6 @@
-<?php include '../includes/config.php'; ?> 
+<?php include '../includes/config.php'; 
+include 'admin_session.php';
+?> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +26,6 @@
     <div class="col-10" id="admin_header">
         <h3>Admin Dashboard</h3>
     </div>
-
 
     <div class="dashboard_container">
 
@@ -103,6 +104,41 @@
       </div>
       
     </div>
+
+    <div class="container_form">
+        <form method="post">
+
+        <?php
+        $query= "SELECT * FROM admin_credits where id=$loggedin_id";
+        $result=mysqli_query($db,$query);
+        if($result){
+            foreach ($result as $row){
+        ?>
+
+        <div class="col-12" id="profile_header">
+            <h3>Admin Profile</h3>
+        </div>
+
+        <div class="form-group">
+            <label for="username">My Name</label>
+            <input type="text" class="form-control" id="username" name="username" value="<?php echo $row['username'];?>" readonly>
+        </div>
+
+        <div class="form-group">
+            <label for="creation_date">Creation Date</label>
+            <input type="text" class="form-control" id="creation_date" name="creation_date" value="<?php echo $row['creation_date'];?>" readonly>
+        </div>
+
+        <div class="form-group">
+            <label for="upd_date">Last Updation Date</label>
+            <input type="text" class="form-control" id="updation_date" name="updation_date" value="<?php echo $row['updation_date'];?>" readonly>
+        </div>
+        <?php 
+            }
+        }
+        ?>
+        </form>
+      </div>
 
 </body>
 <?php include '../includes/footer.php'; ?>
