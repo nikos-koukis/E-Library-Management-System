@@ -50,19 +50,29 @@
 
     }
 
-    .error{
-        font-size: 15px;
+    .error_form{
+        background-color:rgb(255, 218, 218);
         color:red;
+        border-radius: 5px;
+        font-size: 15px;
         padding-left: 20px;
-        margin-top: -10px;
-    
+        letter-spacing: 1px;
+        height: 30px;
+        padding-top: 5px;
     }
 
-    .phone_error{
+    .success_form{
+        background-color:#d5ffd5;
+        color:green;
+        border-radius: 5px;
         font-size: 15px;
-        color:red;
-        padding-left: 20px;
-    } 
+        padding-left: 30px;
+        letter-spacing: 1px;
+        height: 30px;
+        padding-top: 5px;
+    }
+
+
 
 
 }

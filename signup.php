@@ -31,36 +31,46 @@
     </div>
 
     <div class="container_form">
-        <form method="post" name="signup_form" id="signup_form" onsubmit="return signup_form_validation()">
+        <form method="post" name="signup_form" id="signup_form"">
 
         <div class="col-12" id="signup_form_header">
-            <h3>Login Form</h3>
+            <h3>Sign Up Form</h3>
         </div>
 
         <div class="form-group">
             <label for="username">Enter Username<span class="text-danger"> *</span></label>
-            <input type="text" class="form-control" id="username" name="username" required >
+            <input type="text" class="form-control" id="username" name="username"  >
+            <p class="error_form" id="username_error"></p>
+            <p class="success_form" id="username_success"></p>
         </div>
 
         <div class="form-group">
             <label for="email">Enter Email<span class="text-danger"> *</span></label>
-            <input type="email" class="form-control" id="email" name="email" required>
+            <input type="email" class="form-control" id="email" name="email" >
+            <p class="error_form" id="email_error"></p>
+            <p class="success_form" id="email_success"></p>
         </div>
 
         <div class="form-group">
             <label for="phone">Enter Phone</label>
-            <input type="text" class="form-control" id="phone" name="phone" required>
+            <input type="text" class="form-control" id="phone" name="phone" >
             <div class="phone_error"></div>
+            <p class="error_form" id="phone_error"></p>
+            <p class="success_form" id="phone_success"></p>
         </div>
             
         <div class="form-group">
             <label for="password">Password<span class="text-danger"> *</span></label>
-            <input type="password" class="form-control" id="password" name="password" required>
+            <input type="password" class="form-control" id="password" name="password" >
+            <p class="error_form" id="password_error"></p>
+            <p class="success_form" id="password_success"></p>
         </div>
 
         <div class="form-group">
             <label for="confirm_password">Confirm Password<span class="text-danger"> *</span></label>
-            <input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
+            <input type="password" class="form-control" id="confirm_password" name="confirm_password" >
+            <p class="error_form" id="confirm_password_error"></p>
+            <p class="success_form" id="confirm_password_success"></p>
         </div>
 
         <div class="form-check">
