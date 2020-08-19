@@ -33,7 +33,7 @@
 
         <?php 
             $edit_book_id=intval($_GET['edit_book_id']);
-            $query = " SELECT books.id,books.book_name,category.category_name,authors.author_name,books.isbn,books.price,books.creation_date,books.updation_date
+            $query = " SELECT books.id,books.book_name,category.category_name,authors.author_name,books.isbn,books.price,books.status,books.creation_date,books.updation_date
             from books inner join category on books.category_id=category.id inner join authors on books.author_id=authors.id
             WHERE books.id='$edit_book_id'";
             $result = mysqli_query($db,$query);
@@ -88,7 +88,32 @@
             <label for="price">Price<span class="text-danger"> *</span></label>
             <input type="text" class="form-control" id="price" name="price" value="<?php echo $row['price'];?>" required>
         </div>
+        <!-------------------------------------------------------------------------------------------------->
+        <?php if($row['status']==1) {?>
+        <label for="status">Status</label>
+        <div class="form-check">
+            <input type="radio" name="status" id="status" value="1" checked>
+            <label id="active_label">Active</label>
+        </div>
+        <div class="form-check">
+            <input type="radio" name="status" id="status" value="0">
+            <label id="inactive_label">Inactive</label>
+        </div>
 
+        <?php } else { ?>
+
+        <label for="status">Status</label>
+        <div class="form-check">
+            <input type="radio" name="status" id="status" value="1">
+            <label id="active_label">Active</label>
+        </div>
+        <div class="form-check">
+            <input type="radio" name="status" id="status" value="0" checked>
+            <label id="inactive_label">Inactive</label>
+        </div>
+
+        <?php } ?>
+<!-------------------------------------------------------------------------------------------------->
         <?php }} ?>
 
         <button type="submit" class="btn btn-primary" name="edit_book">Edit Book</button>

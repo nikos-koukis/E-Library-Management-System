@@ -80,7 +80,8 @@ if (isset($_POST['user_login'])) {
     $password = mysqli_real_escape_string($db, $_POST['password']);
 
     $password = sha1($password);
-    $query = "SELECT * FROM students WHERE username = '$username' AND password = '$password'";
+    $user_check=$_SESSION['login_user'];
+    $query = "SELECT * FROM students WHERE username = '$username'";
     $result = mysqli_query($db,$query);
     if (mysqli_num_rows($result) == 1){
 
@@ -90,6 +91,64 @@ if (isset($_POST['user_login'])) {
         echo "<script>alert('Invalid');</script>";
     }
 }
+
+
+if (isset($_POST['borrow_book'])) {
+
+        $username = mysqli_real_escape_string($db, $_POST['username']);
+        $book_name = mysqli_real_escape_string($db, $_POST['book_name']);
+        $category_name = mysqli_real_escape_string($db, $_POST['category_name']);
+        $author_name = mysqli_real_escape_string($db, $_POST['author_name']);
+        $isbn_book = mysqli_real_escape_string($db, $_POST['isbn_book']);
+        $borrow_date = mysqli_real_escape_string($db, $_POST['borrow_date']);
+        
+        $query = "INSERT INTO borrow_books (student_name, book_name, category_name, author_book, isbn_book, borrow_date) 
+        VALUES ('$username', '$book_name', '$category_name', '$author_name', '$isbn_book', '$borrow_date')";
+        $result = mysqli_query($db,$query);
+
+        // -------------WHEN STUDENT BORROW BOOK THEN BOOK IS NOT AVAILABLE FROM OTHER STUDENTS-------------------------------------------
+
+        if(isset($_GET['book_name_id']))
+        {
+            $id=$_GET['book_name_id'];
+            $status = 0;
+            $query2 = "UPDATE books set status='$status'  WHERE id='$id'";
+            $result2 = mysqli_query($db,$query2);
+        }
+
+
+//-------------------------- RESET AUTO_INCREMENT FOR BETTER VIEW---------------------------------------------------------------
+    
+        $query3 = "SET @autoid :=0";
+        $result3 = mysqli_query($db,$query3);
+        
+        $query4 = "UPDATE borrow_books set id = @autoid := (@autoid+1)"; 
+        $result4 = mysqli_query($db,$query4);
+        
+        $query5 = "ALTER TABLE borrow_books AUTO_INCREMENT=1";
+        $result5 = mysqli_query($db,$query5);      
+        header( "refresh:0.5;url=user_list_book.php" );
+
+        
+
+    }
+
+
+    //------------------- code for return book from student ----------------
+if(isset($_GET['borrow_id']))
+{
+    $id=$_GET['borrow_id'];
+    $status=1;
+    $query = "UPDATE books set status='$status'  WHERE id='$id'";
+    $result = mysqli_query($db,$query);
+
+    $query2 = "DELETE FROM borrow_books WHERE id='$id'";
+    $result2 = mysqli_query($db,$query2);
+
+    header("Refresh:0; url=user_list_book.php");
+
+}
+
 
 
 ?>

@@ -30,50 +30,80 @@ include('session.php');
     </div>
 
     <div class="container_form">
+
         <form method="post">
 
-        <?php
-        $query= "SELECT * FROM students where id=$loggedin_id";
-        $result=mysqli_query($db,$query);
-        if($result){
-            foreach ($result as $row){
-        ?>
+            <?php
+                $query= "SELECT * FROM students where id=$loggedin_id";
+                $result=mysqli_query($db,$query);
+                if($result){
+                    foreach ($result as $row){
+            ?>
 
-        <div class="col-12" id="profile_header">
-            <h3>My profile</h3>
-        </div>
+                <div class="col-12" id="profile_header">
+                    <h3>My profile</h3>
+                </div>
 
-        <div class="form-group">
-            <label for="username">My Name</label>
-            <input type="text" class="form-control" id="username" name="username" value="<?php echo $row['username'];?>" readonly>
-        </div>
+                <div class="form-group">
+                    <label for="username">My Name</label>
+                    <input type="text" class="form-control" id="username" name="username" value="<?php echo $row['username'];?>" readonly>
+                </div>
 
-        <div class="form-group">
-            <label for="email">My Email</label>
-            <input type="text" class="form-control" id="email" name="email" value="<?php echo $row['email'];?>" readonly>        
-        </div>
+                <div class="form-group">
+                    <label for="email">My Email</label>
+                    <input type="text" class="form-control" id="email" name="email" value="<?php echo $row['email'];?>" readonly>        
+                </div>
 
-        <div class="form-group">
-            <label for="phone">My Phone</label>
-            <input type="text" class="form-control" id="phone" name="phone" value="<?php echo $row['phone'];?>" readonly>
-        </div>
+                <div class="form-group">
+                    <label for="phone">My Phone</label>
+                    <input type="text" class="form-control" id="phone" name="phone" value="<?php echo $row['phone'];?>" readonly>
+                </div>
 
-        <div class="form-group">
-            <label for="reg_date">Registration Date</label>
-            <input type="text" class="form-control" id="reg_date" name="reg_date" value="<?php echo $row['reg_date'];?>" readonly>
-        </div>
+                <div class="form-group">
+                    <label for="reg_date">Registration Date</label>
+                    <input type="text" class="form-control" id="reg_date" name="reg_date" value="<?php echo $row['reg_date'];?>" readonly>
+                </div>
 
-        <div class="form-group">
-            <label for="upd_date">Last Updation Date</label>
-            <input type="text" class="form-control" id="upd_date" name="upd_date" value="<?php echo $row['upd_date'];?>" readonly>
-        </div>
-        <?php 
+                <div class="form-group">
+                    <label for="upd_date">Last Updation Date</label>
+                    <input type="text" class="form-control" id="upd_date" name="upd_date" value="<?php echo $row['upd_date'];?>" readonly>
+                </div>
+            <?php 
+                }
             }
-        }
-        ?>
+            ?>
         </form>
-        <a href="delete_user_acc.php" onclick="return confirm('Are you sure you want to delete permanently your account?');"><button class="btn btn-danger"><i class="fa fa-trash"></i> Delete My Profile</button>
+        <a href="delete_user_acc.php" onclick="return confirm('Are you sure you want to delete permanently your account?');"><button class="btn btn-danger"><i class="fa fa-trash"></i> Delete My Profile</button></a>
     </div>
+
+    <div class="col-md-2 book">
+            <div class="alert alert-info back-widget-set text-center">
+              <i class="fa fa-book fa-4x"></i>
+              <?php
+                    $status = 1;
+                    $query ="SELECT count(*) from books where status='$status'";
+                    $result = mysqli_query($db,$query);
+              ?>
+              <h6>Active Books: <?php while ($row = mysqli_fetch_array($result)) {
+                      echo $row[0];
+                    }?>
+              </h6>
+            </div>
+      </div>
+
+      <div class="col-md-2 borrowed_books">
+            <div class="alert alert-info back-widget-set text-center">
+              <i class="fa fa-book fa-4x"></i>
+              <?php
+                    $query ="SELECT count(*) from borrow_books where student_name='$user_check'";
+                    $result = mysqli_query($db,$query);
+              ?>
+              <h6>Borrowed Books: <?php while ($row = mysqli_fetch_array($result)) {
+                      echo $row[0];
+                    }?>
+              </h6>
+            </div>
+      </div>
     
     
 
@@ -82,5 +112,3 @@ include('session.php');
 <?php include 'includes/footer.php'; ?>
 
 </html>
-
-

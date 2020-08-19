@@ -34,6 +34,11 @@
         font-size:15px;
     }
 
+    input[type=radio]{
+        margin-left: -20px;
+
+    }
+
     select{
         margin-bottom: 5px;
         width: 100%;

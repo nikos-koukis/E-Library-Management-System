@@ -34,7 +34,7 @@ include('session.php');
             echo "</div> ";
             } elseif(!isset($loggedin_session) || $loggedin_session==NULL) {
                 header("Location: login.php");} else {
-                    echo "Unable to delete Your Account";
+                    echo  "<script>alert('Unable to delete Your Account');</script>";
                 }
         ?>
     </div>

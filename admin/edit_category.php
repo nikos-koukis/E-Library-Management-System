@@ -60,6 +60,7 @@
 
         <?php } else { ?>
 
+        <label for="status">Status</label>
         <div class="form-check">
             <input type="radio" name="status" id="status" value="1">
             <label id="active_label">Active</label>

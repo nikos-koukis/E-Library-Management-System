@@ -1,7 +1,6 @@
 <?php
 
-include "../includes/config.php";
-
+$db = mysqli_connect("localhost", "root", "", "library_system");
 
 // ---------------  code for inactive student in student table from admin ------------------
 if(isset($_GET['inact_id']))
@@ -186,11 +185,19 @@ if (isset($_POST['add_book'])) {
     $query="SELECT * FROM books WHERE book_name='$book_name'";
     $result=mysqli_query($db,$query);
 
+    if($_POST['exampleRadios'] == '1'){
+        $status = 1;
+    }
+
+    if($_POST['exampleRadios'] == '0'){
+        $status = 0;
+    }
+
     if (mysqli_num_rows($result) > 0) {
         $book_exists = "<p>Sorry... book already exists</p>";
     }else{
-    $query2 = "INSERT INTO books (book_name,category_id,author_id,isbn,price)
-     VALUES ('$book_name','$category_name','$author_name','$isbn','$price')";
+    $query2 = "INSERT INTO books (book_name,category_id,author_id,isbn,price,status)
+     VALUES ('$book_name','$category_name','$author_name','$isbn','$price','$status')";
     mysqli_query($db,$query2);
 
 
@@ -236,10 +243,12 @@ if(isset($_POST['edit_book'])){
     $author_name = $_POST['author_name'];
     $isbn = $_POST['isbn'];
     $price = $_POST['price'];
+    $status=$_POST['status'];
     
     $edit_book_id=intval($_GET['edit_book_id']);
 
-    $query = "UPDATE books SET book_name='$book_name', category_id='$category_name' ,author_id='$author_name',isbn='$isbn', price='$price'
+    $query = "UPDATE books SET book_name='$book_name', category_id='$category_name' ,author_id='$author_name',isbn='$isbn', 
+    price='$price', status='$status'
     WHERE id='$edit_book_id'";
     $result = mysqli_query($db,$query);
 
@@ -247,28 +256,27 @@ if(isset($_POST['edit_book'])){
 
 }
 
-//------------------- change admin password ---------------
+// ---------------  code for inactive books in books table from admin ------------------
+if(isset($_GET['inact_book_id']))
+{
+    $id=$_GET['inact_book_id'];
+    $status=0;
+    $query = "UPDATE books set status='$status'  WHERE id='$id'";
+    $result = mysqli_query($db,$query);
+    header("Refresh:0; url=manage_books.php");
 
-// if(isset($_POST['change_admin_pass']))
-// {
-//     $current_password=sha1($_POST['current_password']);
-//     $new_password=sha1($_POST['new_password']);
+}
 
+//------------------- code for active books in books table from admin ----------------
+if(isset($_GET['act_book_id']))
+{
+    $id=$_GET['act_book_id'];
+    $status=1;
+    $query = "UPDATE books set status='$status'  WHERE id='$id'";
+    $result = mysqli_query($db,$query);
+    header("Refresh:0; url=manage_books.php");
 
-//     $id=$_GET['admin_id'];
-
-//     $query=mysqli_query($db,"SELECT password FROM admin_credits where password='$current_password' && id='$id'");
-//     $num=mysqli_fetch_array($query);
-
-//     if($num>0)  
-//     {
-//         $con=mysqli_query($db,"update admin_credits set password= '$new_password' where id='$id'");
-
-//     }
-
-
-// }
-
+}
 
 
 ?>

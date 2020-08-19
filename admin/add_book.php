@@ -79,6 +79,17 @@ include 'admin_server.php';
             <label for="price">Price<span class="text-danger"> *</span></label>
             <input type="text" class="form-control" id="price" name="price" required>
         </div>
+
+        <label for="status">Status</label>
+        <div class="form-check">
+            <input type="radio" name="exampleRadios" id="active_radio" value="1" checked>
+            <label id="active_label">Active</label>
+        </div>
+
+        <div class="form-check">
+            <input type="radio" name="exampleRadios" id="inactive_radio" value="0">
+            <label id="inactive_label">Inactive</label>
+        </div>
             
         <button type="submit" class="btn btn-primary" name="add_book">Add Book</button>
 

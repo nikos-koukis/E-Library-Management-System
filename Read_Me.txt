@@ -19,7 +19,7 @@
 2. Login Details for Admin: Username: admin
 							Password: admin
 			
-3. Login Details for User: Username: nikos
+3. Login Details for User: Username: Giorgos Nikolaou
 						   Password: test
 
 4. For more users check the students at admin panel => For all users Paasword: test
@@ -42,6 +42,8 @@
 2. User Dashboard (after register & login).
 3. User Profile.
 4. User can change own password.
+5. User can see available books.
+6. User can borrow book.
 
 #-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
 		

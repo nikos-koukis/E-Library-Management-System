@@ -38,6 +38,12 @@
         border: 1px solid gray;
         font-size:15px;
     }
+
+    input[type=radio]{
+        margin-left: -20px;
+
+    }
+
     
     select{
         margin-bottom: 5px;

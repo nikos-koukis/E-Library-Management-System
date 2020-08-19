@@ -1,14 +1,5 @@
 @media screen and (max-width: 1950px){
 
-    .content-wrapper{
-        margin-left: -220px;
-        margin-top: 20px;
-    }
-    
-    .table-responsive{
-        width: 120%;
-    }
-
     .header-line {
         padding-top: 60px;
     }

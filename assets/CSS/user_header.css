@@ -43,7 +43,6 @@ html,body{
         display: block;
         padding-bottom: 15px;
         padding-top: 15px;
-        letter-spacing: 2px;
 
     }
 
@@ -51,6 +50,11 @@ html,body{
         background-color: rgb(121, 123, 255);
         border-radius: 5px;
     } 
+
+    .nav-item .dropdown-menu{
+        background-color:rgb(148, 191, 255);
+        opacity: .9;
+    }
 
     span{
         font-size: 25px;

@@ -80,24 +80,24 @@ function show_password() {
 
         if(username == ""){
             $("#username_success").hide();
-            $("#username_error").html("Username Required!");
+            $("#username_error").html("<span>&#33;</span> Username Required");
             $("#username_error").focus();
             $("#username_error").show();
             error_username = true;
         }
         else if(username.length < 5){
             $("#username_success").hide();
-            $("#username_error").html("Should be more than 5 characters!");
+            $("#username_error").html("<span>&#33;</span> Should be more than 5 characters");
             $("#username_error").show();
             error_username = true;
           }else if(username.length > 20){
             $("#username_success").hide();
-            $("#username_error").html("Should be less than 20 characters!");
+            $("#username_error").html("<span>&#33;</span> Should be less than 20 characters");
             $("#username_error").show();
             error_username = true;
           }else{
             $("#username_error").hide();
-            $("#username_success").html("Correct!");
+            $("#username_success").html("<span>&#10004;</span> Correct");
             $("#username_success").show();
             success_username = true;
         }
@@ -110,17 +110,17 @@ function show_password() {
 
       if(email == ""){
         $("#email_success").hide();
-        $("#email_error").html("E-mail Required!");
+        $("#email_error").html("<span>&#33;</span> E-mail Required");
         $("#email_error").show();
         error_email = true;
       }else if(email_pattern.test($("#email").val())){
           $("#email_error").hide();
-          $("#email_success").html("Correct!");
+          $("#email_success").html("<span>&#10004;</span> Correct");
           $("#email_success").show();
           success_email = true;
       }else{
           $("#email_success").hide();
-          $("#email_error").html("Invalid Email Address!");
+          $("#email_error").html("<span>&#33;</span> Invalid Email Address");
           $("#email_error").show();
           error_email = true;
       }
@@ -133,17 +133,17 @@ function show_password() {
 
         if(phone == ""){
             $("#phone_success").hide();
-            $("#phone_error").html("Phone Required!");
+            $("#phone_error").html("<span>&#33;</span> Phone Required");
             $("#phone_error").show();
             error_phone = true;
         }else if(phone_pattern.test($("#phone").val())){
             $("#phone_error").hide();
-            $("#phone_success").html("Correct!");
+            $("#phone_success").html("<span>&#10004;</span> Correct");
             $("#phone_success").show();
             success_phone = true;
         }else{
             $("#phone_success").hide();
-            $("#phone_error").html("Invalid Phone!");
+            $("#phone_error").html("<span>&#33;</span> Invalid Phone");
             $("#phone_error").show();
             error_phone = true;
         }
@@ -156,17 +156,17 @@ function show_password() {
 
         if(password == ""){
             $("#password_success").hide();
-            $("#password_error").html("Password Required!");
+            $("#password_error").html("<span>&#33;</span> Password Required");
             $("#password_error").show();
             error_password = true;
         }else if(password.length < 8 ){
             $("#password_success").hide();
-            $("#password_error").html("At least 8 characters!");
+            $("#password_error").html("<span>&#33;</span> At least 8 characters");
             $("#password_error").show();
             error_password = true;
         }else{
             $("#password_error").hide();
-            $("#password_success").html("Correct!");
+            $("#password_success").html("<span>&#10004;</span> Correct");
             $("#password_success").show();
             success_password = true;
         }
@@ -183,12 +183,12 @@ function show_password() {
             $("#confirm_password_error").hide();
         }else if (password != confirm_password){
             $("#confirm_password_success").hide();
-            $("#confirm_password_error").html("Passwords don't match!");
+            $("#confirm_password_error").html("<span>&#33;</span> Passwords don't match");
             $("#confirm_password_error").show();
             error_confirm_password = true;
         }else{
             $("#confirm_password_error").hide();
-            $("#confirm_password_success").html("Passwords match!");
+            $("#confirm_password_success").html("<span>&#10004;</span> Passwords match");
             $("#confirm_password_success").show();
             success_confirm_password = true;
         }

@@ -48,11 +48,25 @@
         font-size: 20px;
     }
 
+    .book{
 
+        margin-left: 650px;
+        margin-top: -660px;   
+    }
+
+     .book h6{
+        margin-top: 10px; 
+    }
       
+    .borrowed_books{
+
+        margin-left: 1050px;
+        margin-top: -143px;   
+    }
+
+     .borrowed_books h6{
+        margin-top: 10px; 
+    }
  
-      
-
-
 
 }

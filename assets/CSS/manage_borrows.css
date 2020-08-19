@@ -1,12 +1,14 @@
-/* ---------------------------------------- SIGNUP FORM --------------------------------------------------- */
 
 @media screen and (max-width: 1920px){ 
-    #user-header{
+    
+
+    #borrow-header{
         margin-top: 3%;
         margin-left: 100px;
         border-bottom: 2px solid rgb(132, 165, 255);
     }
 
+    
     .container_form{
         border: 1px solid rgb(132, 165, 255);
         border-radius: 5px;
@@ -15,19 +17,23 @@
         padding: 10px;
         font-size: 18px;
         font-weight: bold;
-        margin-bottom: 70px;
+        margin-bottom: 80px;
         margin-top: 45px;
-
     }
 
-    #signup_form_header{
+    #form_header{
         color: rgb(68, 118, 255);
         text-align: center;
         border-bottom: 2px solid rgb(132, 165, 255);
 
     }
 
-    input[type=text],[type=password],[type=email]{
+    label[for="username"]{
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    input[type=text]{
         margin-bottom: 5px;
         width: 100%;
         padding: 15px;
@@ -36,8 +42,13 @@
         font-size:15px;
     }
 
-    label[for="username"]{
-        padding-top: 10px;
+    input[type=datetime]{
+        margin-bottom: 5px;
+        width: 100%;
+        padding: 15px;
+        border-radius:5px;
+        border: 1px solid gray;
+        font-size:15px;
     }
 
     button{
@@ -47,27 +58,7 @@
         padding: 15px;
         border-radius: 5px;
         font-size: 20px;
-
     }
-
-    .error_form{
-        background-color:rgb(255, 218, 218);
-        color:red;
-        border-radius: 5px;
-        font-size: 15px;
-        padding-left: 20px;
-        letter-spacing: 1px;
-    }
-
-    .success_form{
-        background-color:#d5ffd5;
-        color:green;
-        border-radius: 5px;
-        font-size: 15px;
-        padding-left: 30px;
-        letter-spacing: 1px;
-    }
-
 
 
 
