@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Φιλοξενητής: 127.0.0.1
--- Χρόνος δημιουργίας: 10 Αυγ 2020 στις 08:05:46
+-- Χρόνος δημιουργίας: 03 Σεπ 2020 στις 14:51:16
 -- Έκδοση διακομιστή: 10.4.13-MariaDB
 -- Έκδοση PHP: 7.4.8
 
@@ -83,17 +83,35 @@ CREATE TABLE `books` (
   `price` varchar(100) NOT NULL,
   `isbn` varchar(100) NOT NULL,
   `creation_date` timestamp NULL DEFAULT current_timestamp(),
-  `updation_date` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp()
+  `updation_date` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp(),
+  `status` int(11) DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Άδειασμα δεδομένων του πίνακα `books`
 --
 
-INSERT INTO `books` (`id`, `book_name`, `category_id`, `author_id`, `price`, `isbn`, `creation_date`, `updation_date`) VALUES
-(1, 'A Word of Art', 1, 1, '10 $', '9874563256985', '2020-08-10 06:01:23', '2020-08-10 06:01:27'),
-(2, 'Microsoft', 4, 8, '45 $', '5210365478963', '2020-08-10 06:01:53', NULL),
-(3, 'Odyssey', 8, 3, '15 $', '7896325412', '2020-08-10 06:03:46', NULL);
+INSERT INTO `books` (`id`, `book_name`, `category_id`, `author_id`, `price`, `isbn`, `creation_date`, `updation_date`, `status`) VALUES
+(1, 'A Word of Art', 1, 1, '10 $', '9874563256985', '2020-08-10 06:01:23', '2020-09-03 12:49:55', 1),
+(2, 'Microsoft', 4, 8, '45 $', '5210365478963', '2020-08-10 06:01:53', NULL, 1),
+(3, 'Odyssey', 8, 3, '15 $', '7896325412', '2020-08-10 06:03:46', NULL, 1),
+(4, 'test', 7, 2, '10', '12364', '2020-09-03 12:39:09', NULL, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Δομή πίνακα για τον πίνακα `borrow_books`
+--
+
+CREATE TABLE `borrow_books` (
+  `id` int(11) NOT NULL,
+  `student_name` varchar(200) NOT NULL,
+  `book_name` varchar(200) NOT NULL,
+  `category_name` varchar(200) NOT NULL,
+  `author_book` varchar(200) NOT NULL,
+  `isbn_book` varchar(200) NOT NULL,
+  `borrow_date` timestamp NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -158,7 +176,8 @@ INSERT INTO `students` (`id`, `username`, `email`, `phone`, `reg_date`, `upd_dat
 (4, 'Giorgos Ninos', 'giorgosninos@hotmail.com', '6985412547', '2020-08-10 05:32:41', NULL, 1, 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3'),
 (5, 'Nikos Giannopoulos', 'nikosgiannopoulos@gmail.com', '6985214562', '2020-08-10 05:33:48', '2020-08-10 05:35:19', 0, 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3'),
 (6, 'Nikos Sideris', 'nikossideris@gmail.com', '6203587452', '2020-08-10 05:34:29', NULL, 1, 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3'),
-(7, 'Dimitris Giannopoulos', 'dimitrisgianoopoulos@hotmail.com', '6987452012', '2020-08-10 05:35:04', NULL, 1, 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3');
+(7, 'Dimitris Giannopoulos', 'dimitrisgianoopoulos@hotmail.com', '6987452012', '2020-08-10 05:35:04', NULL, 1, 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3'),
+(8, 'nikos', 'nikos@gmail.com', '6972534499', '2020-09-03 12:29:17', NULL, 1, '51abb9636078defbf888d8457a7c76f85c8f114c');
 
 --
 -- Ευρετήρια για άχρηστους πίνακες
@@ -183,6 +202,12 @@ ALTER TABLE `books`
   ADD PRIMARY KEY (`id`),
   ADD KEY `books_fk1` (`category_id`),
   ADD KEY `books_fk2` (`author_id`);
+
+--
+-- Ευρετήρια για πίνακα `borrow_books`
+--
+ALTER TABLE `borrow_books`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Ευρετήρια για πίνακα `category`
@@ -216,7 +241,13 @@ ALTER TABLE `authors`
 -- AUTO_INCREMENT για πίνακα `books`
 --
 ALTER TABLE `books`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT για πίνακα `borrow_books`
+--
+ALTER TABLE `borrow_books`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT για πίνακα `category`
@@ -228,7 +259,7 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT για πίνακα `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Περιορισμοί για άχρηστους πίνακες
